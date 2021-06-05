@@ -1,3 +1,6 @@
+variable "region" {
+  default = "us-east-2"
+}
 terraform {
   required_providers {
     aws = {
@@ -12,10 +15,9 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   alias  = "east"
-  profile = "default"
-  region  = "us-east-2"
-  access_key = "AKIA5HJZIVL47SSGZKES"
-  secret_key = "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"
+  profile = "local-dev"
+  region  = "${region}"
+  shared_credentials_file = "/Users/satee/.aws/new_user_credentials"
 }
 
 # resource "aws-instance" "tf-ec2" {
