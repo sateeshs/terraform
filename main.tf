@@ -17,7 +17,6 @@ provider "aws" {
   alias  = "east"
   profile = "local-dev"
   region  = "${region}"
-  shared_credentials_file = "/Users/satee/.aws/new_user_credentials"
 }
 
 # resource "aws-instance" "tf-ec2" {
